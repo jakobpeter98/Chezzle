@@ -17,7 +17,7 @@
 		9776F9782A0AE40D00BF47AA /* ChezzleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9776F9772A0AE40D00BF47AA /* ChezzleUITests.swift */; };
 		9776F97A2A0AE40D00BF47AA /* ChezzleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9776F9792A0AE40D00BF47AA /* ChezzleUITestsLaunchTests.swift */; };
 		9776F98D2A0AED1800BF47AA /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9776F98C2A0AED1800BF47AA /* BoardView.swift */; };
-		979D0B712A58396600BD2FCB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 979D0B702A58396600BD2FCB /* GoogleService-Info.plist */; };
+		979D0B782A584D9000BD2FCB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 979D0B772A584D9000BD2FCB /* GoogleService-Info.plist */; };
 		97A825682A573E2700A2D908 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A825672A573E2700A2D908 /* LoginView.swift */; };
 		97A8256B2A573EC900A2D908 /* ChezzleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A8256A2A573EC900A2D908 /* ChezzleButton.swift */; };
 		97A8256D2A573EDD00A2D908 /* AnimatedHudItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A8256C2A573EDD00A2D908 /* AnimatedHudItem.swift */; };
@@ -67,7 +67,7 @@
 		9776F9772A0AE40D00BF47AA /* ChezzleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChezzleUITests.swift; sourceTree = "<group>"; };
 		9776F9792A0AE40D00BF47AA /* ChezzleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChezzleUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9776F98C2A0AED1800BF47AA /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
-		979D0B702A58396600BD2FCB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		979D0B772A584D9000BD2FCB /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		97A825672A573E2700A2D908 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		97A8256A2A573EC900A2D908 /* ChezzleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChezzleButton.swift; sourceTree = "<group>"; };
 		97A8256C2A573EDD00A2D908 /* AnimatedHudItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedHudItem.swift; sourceTree = "<group>"; };
@@ -147,7 +147,7 @@
 				97A825692A573E6C00A2D908 /* CustomUI */,
 				9776F95F2A0AE40D00BF47AA /* Assets.xcassets */,
 				9776F9612A0AE40D00BF47AA /* Chezzle.entitlements */,
-				979D0B702A58396600BD2FCB /* GoogleService-Info.plist */,
+				979D0B772A584D9000BD2FCB /* GoogleService-Info.plist */,
 				9776F9622A0AE40D00BF47AA /* Preview Content */,
 			);
 			path = Chezzle;
@@ -337,7 +337,7 @@
 			files = (
 				9776F9642A0AE40D00BF47AA /* Preview Assets.xcassets in Resources */,
 				9776F9602A0AE40D00BF47AA /* Assets.xcassets in Resources */,
-				979D0B712A58396600BD2FCB /* GoogleService-Info.plist in Resources */,
+				979D0B782A584D9000BD2FCB /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
