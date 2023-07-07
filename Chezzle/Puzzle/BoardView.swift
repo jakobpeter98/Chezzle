@@ -1,0 +1,219 @@
+//
+//  BoardView.swift
+//  Chezzle
+//
+//  Created by Jakob Peter on 09.05.23.
+//
+
+import SwiftUI
+
+struct BoardView: View {
+    @EnvironmentObject var viewModel: PuzzleViewModel
+    @State var animate = false
+    
+    var body: some View {
+        VStack {
+            GeometryReader { geo in
+                VStack(spacing: 0) {
+                    
+                    Spacer()
+                    
+                    DisplayTop()
+                        .padding(.vertical, 8)
+                        .padding(8)
+                        .shadow(color: Color.black ,radius: 2, x: 1, y: 1)
+                    
+                    Board(squares: viewModel.squares)
+                        .shadow(radius: 0)
+                        .frame(height: geo.size.width)
+                        .shadow(color: Color.black ,radius: 5)
+                    
+                    Spacer()
+                    
+                    
+                    
+                }
+            }
+            .ignoresSafeArea()
+        }
+        
+    }
+}
+
+struct Board: View {
+    @EnvironmentObject var viewModel: PuzzleViewModel
+    @State var squares: [Square]
+    @State var animate: Bool = false
+    @State var puzzleSolvedAnimation = true
+    @State var animatedPiece = ""
+    
+    var body: some View {
+        GeometryReader { geo in
+            ZStack {
+                VStack(spacing: 0) {
+                    ForEach(0..<8) { row in
+                        HStack(spacing: 0) {
+                            ForEach(0..<8) { column in
+                                let index = row * 8 + column
+                                let square = squares[index]
+                                
+                                SquareView(square: square)
+                            }
+                        }
+                    }
+                }
+                
+                
+                if viewModel.animateMove {
+                    Image(animatedPiece)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .padding(.top, 4)
+                        .frame(width: geo.size.width / 8, height: geo.size.width / 8)
+                        .position(
+                            x: geo.size.width / 16 + CGFloat(viewModel.sourceIndex % 8) * (geo.size.width / 8),
+                            y: geo.size.width / 16 + CGFloat(viewModel.sourceIndex / 8) * (geo.size.width / 8)
+                        )
+                        .onAppear {
+                            animatedPiece = squares[viewModel.sourceIndex].piece
+                            squares[viewModel.sourceIndex].piece = ""
+                        }
+                        .offset(x: animate ? CGFloat(viewModel.targetIndex % 8 - viewModel.sourceIndex % 8) * (geo.size.width / 8) : 0,
+                                y: animate ? CGFloat(viewModel.targetIndex / 8 - viewModel.sourceIndex / 8) * (geo.size.width / 8) : 0)
+                    
+                    
+                        .onAppear {
+                            withAnimation(.easeInOut(duration: 0.5)){
+                                animate = true
+                            }
+                            //deselect
+                            squares[viewModel.sourceIndex].isSelected = false
+                            squares[viewModel.targetIndex].isSelected = false
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                squares[viewModel.targetIndex].piece = animatedPiece
+                                animatedPiece = ""
+                                viewModel.animateMove = false
+                                animate = false
+                            }
+                        }
+                }
+                
+                PuzzleSolvedCard(show: $viewModel.animatePuzzleSolved)
+                
+            }
+        }
+    }
+}
+
+struct SquareView: View {
+    @EnvironmentObject var viewModel: PuzzleViewModel
+    @ObservedObject var square: Square
+    
+    @State var animateRight = false
+    @State var animateWrong = false
+    
+    var body: some View {
+        ZStack {
+            Rectangle()
+                .fill(square.color)
+                .border(square.isSelected ? Color("ColorMainLight") : Color.clear, width: 3)
+                .animation(.easeIn(duration: 0.2), value: square.isSelected)
+            
+            if animateRight{
+                Rectangle()
+                    .fill(square.color)
+                    .border(Color.green, width: 3)
+                    .onAppear {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+                            square.animateRight.toggle()
+                        }
+                    }
+                
+            }
+            
+            if animateWrong{
+                Rectangle()
+                    .fill(square.color)
+                    .colorMultiply(animateWrong ? Color.red: Color.clear)
+                    .animation(.easeOut(duration: 0.3), value: square.animateWrong)
+                    .border(Color.red, width: 3)
+                    .onAppear {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+                            square.animateWrong.toggle()
+                        }
+                    }
+                
+            }
+            
+            
+            if !square.piece.isEmpty {
+                Image(square.piece)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .padding(.top, 4)
+            }
+        }
+        .onChange(of: square.animateRight, perform: { newValue in
+            withAnimation(.easeInOut(duration: 0.1)){
+                animateRight = newValue
+                
+            }
+        })
+        .onChange(of: square.animateWrong, perform: { newValue in
+            withAnimation(.easeOut(duration: 0.2).repeatCount(4, autoreverses: true)){
+                animateWrong = newValue
+                
+            }
+        })
+        .onTapGesture {
+            square.isSelected.toggle()
+        }
+    }
+}
+
+struct DisplayTop: View {
+    @EnvironmentObject var vm: PuzzleViewModel
+    var body: some View {
+        
+        HStack {
+            HStack {
+                
+                HStack {
+                    AnimatedHudItem(imageName:"arrow.up.and.down", value: vm.currentPuzzle?.rating ?? -1)
+                }
+                .font(.system(size: 20).bold())
+                .frame(maxWidth: .infinity, alignment: .leading)
+                
+                
+                AnimatedHudItem(imageName:"heart.fill", value: vm.tries)
+                    .font(.system(size: 20).bold())
+                    .frame(maxWidth: .infinity,alignment: .leading)
+                
+                
+                AnimatedHudItem(imageName: "trophy.fill", value: vm.score)
+                    .font(.system(size: 20).bold())
+                    .frame(maxWidth: .infinity,alignment: .leading)
+                
+                AnimatedHudItem(imageName: "square.stack.3d.forward.dottedline.fill", value: vm.streak)
+                    .font(.system(size: 20).bold())
+                    .frame(maxWidth: .infinity,alignment: .leading)
+                
+            }
+            .padding(10)
+            .frame(height: 50)
+            
+        }
+        .background(Color("ColorMainDark"))
+        .cornerRadius(6)
+    }
+}
+
+struct BoardView_Previews: PreviewProvider {
+    static var previews: some View {
+        let viewModel = PuzzleViewModel()
+        
+        BoardView().environmentObject(viewModel)
+        
+    }
+    
+}

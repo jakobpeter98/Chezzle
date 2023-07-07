@@ -7,13 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9725DE222A1779D700D92C31 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9725DE212A1779D700D92C31 /* Database.swift */; };
+		972922292A2DCF2D00D31A3B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972922282A2DCF2D00D31A3B /* LoginViewModel.swift */; };
+		9733C0E32A543230006CEC84 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9733C0E22A543230006CEC84 /* GoogleService-Info.plist */; };
+		9739CC512A1E1DC6008071C7 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9739CC502A1E1DC6008071C7 /* MenuView.swift */; };
 		9776F95C2A0AE40B00BF47AA /* ChezzleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9776F95B2A0AE40B00BF47AA /* ChezzleApp.swift */; };
-		9776F95E2A0AE40B00BF47AA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9776F95D2A0AE40B00BF47AA /* ContentView.swift */; };
 		9776F9602A0AE40D00BF47AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9776F95F2A0AE40D00BF47AA /* Assets.xcassets */; };
 		9776F9642A0AE40D00BF47AA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9776F9632A0AE40D00BF47AA /* Preview Assets.xcassets */; };
 		9776F96E2A0AE40D00BF47AA /* ChezzleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9776F96D2A0AE40D00BF47AA /* ChezzleTests.swift */; };
 		9776F9782A0AE40D00BF47AA /* ChezzleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9776F9772A0AE40D00BF47AA /* ChezzleUITests.swift */; };
 		9776F97A2A0AE40D00BF47AA /* ChezzleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9776F9792A0AE40D00BF47AA /* ChezzleUITestsLaunchTests.swift */; };
+		9776F98D2A0AED1800BF47AA /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9776F98C2A0AED1800BF47AA /* BoardView.swift */; };
+		97A825682A573E2700A2D908 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A825672A573E2700A2D908 /* LoginView.swift */; };
+		97A8256B2A573EC900A2D908 /* ChezzleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A8256A2A573EC900A2D908 /* ChezzleButton.swift */; };
+		97A8256D2A573EDD00A2D908 /* AnimatedHudItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A8256C2A573EDD00A2D908 /* AnimatedHudItem.swift */; };
+		97A8256F2A573EF200A2D908 /* SettingsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A8256E2A573EF200A2D908 /* SettingsSection.swift */; };
+		97A825712A573F4000A2D908 /* CheckBoxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A825702A573F4000A2D908 /* CheckBoxStyle.swift */; };
+		97A825752A57452B00A2D908 /* TrainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A825742A57452B00A2D908 /* TrainingView.swift */; };
+		97A825772A576E2D00A2D908 /* TagButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A825762A576E2D00A2D908 /* TagButton.swift */; };
+		97A825792A57873700A2D908 /* PuzzleSolvedCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A825782A57873600A2D908 /* PuzzleSolvedCard.swift */; };
+		97AF94982A151B4000ECA7CD /* PuzzleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AF94972A151B4000ECA7CD /* PuzzleViewModel.swift */; };
+		97BD98CD2A53006500FA7D44 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 97BD98CC2A53006500FA7D44 /* FirebaseAuth */; };
+		97BD98CF2A53006500FA7D44 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 97BD98CE2A53006500FA7D44 /* FirebaseDatabase */; };
+		97BD98D12A53006500FA7D44 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 97BD98D02A53006500FA7D44 /* FirebaseFirestore */; };
+		97BD98D32A53006500FA7D44 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 97BD98D22A53006500FA7D44 /* FirebaseFirestoreSwift */; };
+		97C7BBDC2A1EA23000755467 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C7BBDB2A1EA23000755467 /* Converter.swift */; };
+		97DF05622A56FFD00053BA93 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DF05612A56FFD00053BA93 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +53,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9725DE212A1779D700D92C31 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		972922282A2DCF2D00D31A3B /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		9733C0E22A543230006CEC84 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9739CC502A1E1DC6008071C7 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		9776F9582A0AE40B00BF47AA /* Chezzle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chezzle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9776F95B2A0AE40B00BF47AA /* ChezzleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChezzleApp.swift; sourceTree = "<group>"; };
-		9776F95D2A0AE40B00BF47AA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9776F95F2A0AE40D00BF47AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9776F9612A0AE40D00BF47AA /* Chezzle.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Chezzle.entitlements; sourceTree = "<group>"; };
 		9776F9632A0AE40D00BF47AA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -45,6 +67,18 @@
 		9776F9732A0AE40D00BF47AA /* ChezzleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChezzleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9776F9772A0AE40D00BF47AA /* ChezzleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChezzleUITests.swift; sourceTree = "<group>"; };
 		9776F9792A0AE40D00BF47AA /* ChezzleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChezzleUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9776F98C2A0AED1800BF47AA /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
+		97A825672A573E2700A2D908 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		97A8256A2A573EC900A2D908 /* ChezzleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChezzleButton.swift; sourceTree = "<group>"; };
+		97A8256C2A573EDD00A2D908 /* AnimatedHudItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedHudItem.swift; sourceTree = "<group>"; };
+		97A8256E2A573EF200A2D908 /* SettingsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSection.swift; sourceTree = "<group>"; };
+		97A825702A573F4000A2D908 /* CheckBoxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxStyle.swift; sourceTree = "<group>"; };
+		97A825742A57452B00A2D908 /* TrainingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingView.swift; sourceTree = "<group>"; };
+		97A825762A576E2D00A2D908 /* TagButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagButton.swift; sourceTree = "<group>"; };
+		97A825782A57873600A2D908 /* PuzzleSolvedCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleSolvedCard.swift; sourceTree = "<group>"; };
+		97AF94972A151B4000ECA7CD /* PuzzleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleViewModel.swift; sourceTree = "<group>"; };
+		97C7BBDB2A1EA23000755467 /* Converter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
+		97DF05612A56FFD00053BA93 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +86,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97BD98CF2A53006500FA7D44 /* FirebaseDatabase in Frameworks */,
+				97BD98CD2A53006500FA7D44 /* FirebaseAuth in Frameworks */,
+				97BD98D12A53006500FA7D44 /* FirebaseFirestore in Frameworks */,
+				97BD98D32A53006500FA7D44 /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +110,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9725DE1E2A17781600D92C31 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9776F94F2A0AE40B00BF47AA = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +124,7 @@
 				9776F96C2A0AE40D00BF47AA /* ChezzleTests */,
 				9776F9762A0AE40D00BF47AA /* ChezzleUITests */,
 				9776F9592A0AE40B00BF47AA /* Products */,
+				9725DE1E2A17781600D92C31 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,8 +141,11 @@
 		9776F95A2A0AE40B00BF47AA /* Chezzle */ = {
 			isa = PBXGroup;
 			children = (
-				9776F95B2A0AE40B00BF47AA /* ChezzleApp.swift */,
-				9776F95D2A0AE40B00BF47AA /* ContentView.swift */,
+				9733C0E22A543230006CEC84 /* GoogleService-Info.plist */,
+				97C7BBDD2A1EA26A00755467 /* Data */,
+				97C7BBDF2A1EA2B900755467 /* Main */,
+				97C7BBDE2A1EA28300755467 /* Puzzle */,
+				97A825692A573E6C00A2D908 /* CustomUI */,
 				9776F95F2A0AE40D00BF47AA /* Assets.xcassets */,
 				9776F9612A0AE40D00BF47AA /* Chezzle.entitlements */,
 				9776F9622A0AE40D00BF47AA /* Preview Content */,
@@ -129,6 +178,50 @@
 			path = ChezzleUITests;
 			sourceTree = "<group>";
 		};
+		97A825692A573E6C00A2D908 /* CustomUI */ = {
+			isa = PBXGroup;
+			children = (
+				97A8256A2A573EC900A2D908 /* ChezzleButton.swift */,
+				97A8256C2A573EDD00A2D908 /* AnimatedHudItem.swift */,
+				97A8256E2A573EF200A2D908 /* SettingsSection.swift */,
+				97A825702A573F4000A2D908 /* CheckBoxStyle.swift */,
+				97A825762A576E2D00A2D908 /* TagButton.swift */,
+				97A825782A57873600A2D908 /* PuzzleSolvedCard.swift */,
+			);
+			path = CustomUI;
+			sourceTree = "<group>";
+		};
+		97C7BBDD2A1EA26A00755467 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				9725DE212A1779D700D92C31 /* Database.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		97C7BBDE2A1EA28300755467 /* Puzzle */ = {
+			isa = PBXGroup;
+			children = (
+				97AF94972A151B4000ECA7CD /* PuzzleViewModel.swift */,
+				9776F98C2A0AED1800BF47AA /* BoardView.swift */,
+				97A825742A57452B00A2D908 /* TrainingView.swift */,
+				97C7BBDB2A1EA23000755467 /* Converter.swift */,
+			);
+			path = Puzzle;
+			sourceTree = "<group>";
+		};
+		97C7BBDF2A1EA2B900755467 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				9776F95B2A0AE40B00BF47AA /* ChezzleApp.swift */,
+				9739CC502A1E1DC6008071C7 /* MenuView.swift */,
+				972922282A2DCF2D00D31A3B /* LoginViewModel.swift */,
+				97DF05612A56FFD00053BA93 /* SettingsView.swift */,
+				97A825672A573E2700A2D908 /* LoginView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -145,6 +238,12 @@
 			dependencies = (
 			);
 			name = Chezzle;
+			packageProductDependencies = (
+				97BD98CC2A53006500FA7D44 /* FirebaseAuth */,
+				97BD98CE2A53006500FA7D44 /* FirebaseDatabase */,
+				97BD98D02A53006500FA7D44 /* FirebaseFirestore */,
+				97BD98D22A53006500FA7D44 /* FirebaseFirestoreSwift */,
+			);
 			productName = Chezzle;
 			productReference = 9776F9582A0AE40B00BF47AA /* Chezzle.app */;
 			productType = "com.apple.product-type.application";
@@ -217,6 +316,9 @@
 				Base,
 			);
 			mainGroup = 9776F94F2A0AE40B00BF47AA;
+			packageReferences = (
+				97BD98CB2A53006500FA7D44 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 9776F9592A0AE40B00BF47AA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -235,6 +337,7 @@
 			files = (
 				9776F9642A0AE40D00BF47AA /* Preview Assets.xcassets in Resources */,
 				9776F9602A0AE40D00BF47AA /* Assets.xcassets in Resources */,
+				9733C0E32A543230006CEC84 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,8 +362,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9776F95E2A0AE40B00BF47AA /* ContentView.swift in Sources */,
+				9739CC512A1E1DC6008071C7 /* MenuView.swift in Sources */,
+				97DF05622A56FFD00053BA93 /* SettingsView.swift in Sources */,
+				97A825792A57873700A2D908 /* PuzzleSolvedCard.swift in Sources */,
+				9776F98D2A0AED1800BF47AA /* BoardView.swift in Sources */,
+				97A825682A573E2700A2D908 /* LoginView.swift in Sources */,
+				97AF94982A151B4000ECA7CD /* PuzzleViewModel.swift in Sources */,
+				9725DE222A1779D700D92C31 /* Database.swift in Sources */,
+				97A8256F2A573EF200A2D908 /* SettingsSection.swift in Sources */,
+				97A825712A573F4000A2D908 /* CheckBoxStyle.swift in Sources */,
 				9776F95C2A0AE40B00BF47AA /* ChezzleApp.swift in Sources */,
+				97C7BBDC2A1EA23000755467 /* Converter.swift in Sources */,
+				97A8256D2A573EDD00A2D908 /* AnimatedHudItem.swift in Sources */,
+				972922292A2DCF2D00D31A3B /* LoginViewModel.swift in Sources */,
+				97A825772A576E2D00A2D908 /* TagButton.swift in Sources */,
+				97A825752A57452B00A2D908 /* TrainingView.swift in Sources */,
+				97A8256B2A573EC900A2D908 /* ChezzleButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +532,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Chezzle/Preview Content\"";
+				DEVELOPMENT_TEAM = QA939389RF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -427,10 +545,9 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 13.1;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = FreshDev.Chezzle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -451,6 +568,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Chezzle/Preview Content\"";
+				DEVELOPMENT_TEAM = QA939389RF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -463,10 +581,9 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 13.1;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = FreshDev.Chezzle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -485,6 +602,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QA939389RF;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MACOSX_DEPLOYMENT_TARGET = 13.1;
@@ -507,6 +625,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QA939389RF;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MACOSX_DEPLOYMENT_TARGET = 13.1;
@@ -604,6 +723,40 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		97BD98CB2A53006500FA7D44 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		97BD98CC2A53006500FA7D44 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 97BD98CB2A53006500FA7D44 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		97BD98CE2A53006500FA7D44 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 97BD98CB2A53006500FA7D44 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		97BD98D02A53006500FA7D44 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 97BD98CB2A53006500FA7D44 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		97BD98D22A53006500FA7D44 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 97BD98CB2A53006500FA7D44 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9776F9502A0AE40B00BF47AA /* Project object */;
 }
