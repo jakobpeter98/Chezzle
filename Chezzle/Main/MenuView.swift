@@ -61,7 +61,7 @@ struct MenuView: View {
                                     
                                     VStack(alignment: .center,spacing: 0){
                                         ChezzleButton(imgName: "puzzlepiece.extension.fill", action: {
-                                            withAnimation(.interpolatingSpring(stiffness: 200, damping: 16.6)){
+                                            withAnimation(.interpolatingSpring(stiffness: 160, damping: 14.3)){
                                                 currentView = .puzzle
                                                 
                                             }
@@ -133,7 +133,7 @@ struct MenuView: View {
                 }
             }
             .onChange(of: vmLogin.isLoggedIn) { newValue in
-                withAnimation(.interpolatingSpring(stiffness: 200, damping: 16.6)){
+                withAnimation(.interpolatingSpring(stiffness: 160, damping: 14.3)){
                     currentView = newValue ? .root : .login
                 }
                 
@@ -142,7 +142,6 @@ struct MenuView: View {
                 if showSettings {
                     SettingsView(show: $showSettings)
                         .transition(.asymmetric(insertion: .push(from: .bottom), removal: .push(from: .top)))
-                        .padding(.top, 8)
                 }
                 
             }
@@ -164,7 +163,7 @@ struct DisplayBottom: View {
                 if currentView == .root{
                     vm.logOut()
                 } else {
-                    withAnimation(.interpolatingSpring(stiffness: 200, damping: 16.6)) {
+                    withAnimation(.interpolatingSpring(stiffness: 160, damping: 14.3)) {
                         currentView = .root
                     }
                     
@@ -172,7 +171,7 @@ struct DisplayBottom: View {
             })
             .frame(width: 50,height: 50)
             ChezzleButton(imgName: "gearshape.fill", action: {
-                withAnimation(.interpolatingSpring(stiffness: 200, damping: 16.6)){
+                withAnimation(.interpolatingSpring(stiffness: 150, damping: 14.3)){
                     showSettings.toggle()
                 }
                 
