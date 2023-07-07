@@ -69,7 +69,6 @@ struct AnimatedHudItem_Previews: PreviewProvider {
     static var previews: some View {
         VStack{
             AnimatedHudItem(imageName: "person.fill", value: 12)
-            Text("LOL")
         }
         
     }
