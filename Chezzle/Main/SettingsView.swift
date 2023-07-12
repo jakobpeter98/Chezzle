@@ -21,16 +21,17 @@ struct SettingsView: View {
         ZStack{
             
             RoundedRectangle(cornerRadius: 16)
-                .foregroundColor(.white)
+                .fill(Material.ultraThinMaterial)
                 .shadow(radius: 3)
-            
+                            
             VStack(alignment: .leading, spacing: 0){
                 
                 Text("Settings")
                     .font(.largeTitle)
                     .padding(16)
                     .padding(.leading, 16)
-                    .foregroundColor(Color("ColorMainDark"))
+                    .foregroundColor(.white)
+
                 
                 HStack(alignment: .center, spacing: 0){
                     List {
@@ -61,7 +62,7 @@ struct SettingsView: View {
                         }
                         
                         
-                        Section("This is a Section") {
+                        SettingsSection(title: "This is a Section") {
                             Text("This is a Section")
                                 .padding(.vertical, 8)
                             
@@ -102,12 +103,7 @@ struct SettingsView: View {
                     }
                     .scrollIndicators(.visible)
                     .scrollContentBackground(.hidden)
-                    .background(Rectangle()
-                        .fill(Gradient(colors:[Color(.white),Color("ColorMainLight").opacity(0.2)]
-                                      )
-                        )
-                    )
-                    .foregroundColor(Color("ColorMainDark"))
+                    .foregroundColor(Color.white)
                     
                     
                     

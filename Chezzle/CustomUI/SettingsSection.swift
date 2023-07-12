@@ -25,7 +25,7 @@ struct SettingsSection<Content> : View where Content : View{
                 
             }
         }
-        .listRowBackground(Color(.white))
+        .listRowBackground(Rectangle().fill(.ultraThinMaterial))
         
     }
 }

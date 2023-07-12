@@ -51,13 +51,16 @@ struct ChezzleButton: View {
             .shadow(color:.black, radius: 2, x: isAction ? 1 : 2, y: isAction ? 3 : 4)
             .animation(.easeOut(duration: 0.2), value: isAction)
             .onTapGesture {
-                isAction.toggle()
-                action()
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                    if autoRevert {
-                        isAction.toggle()
+                if !isAction {
+                    action()
+                    isAction.toggle()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                        if autoRevert {
+                            isAction.toggle()
+                        }
                     }
                 }
+                
                 
             }
         }
@@ -67,7 +70,7 @@ struct ChezzleButton: View {
 
 struct ChezzleButton_Previews: PreviewProvider {
     static var previews: some View {
-        ChezzleButton(text: "ChezzleButton", imgName: "star.fill"){
+        ChezzleButton(text: "ChezzleButton", imgName: "star.fill", autoRevert: false){
             print("ChezzleButton clicked")
         }.frame(width: 200,height: 50)
     }
