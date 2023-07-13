@@ -11,31 +11,75 @@ struct BoardView: View {
     @EnvironmentObject var viewModel: PuzzleViewModel
     @State var animate = false
     
+    @State var puzzleLiked = false
+    
     var body: some View {
-        VStack {
-            GeometryReader { geo in
+        GeometryReader { geo in
+            VStack {
+                Spacer()
                 VStack(spacing: 0) {
                     
-                    Spacer()
+                    
                     
                     DisplayTop()
-                        .padding(.vertical, 8)
-                        .padding(8)
+                        //.padding(.horizontal,4)
+                        .padding(.vertical, 16)
                         .shadow(color: Color.black ,radius: 2, x: 1, y: 1)
                     
                     Board(squares: viewModel.squares)
                         .shadow(radius: 0)
                         .frame(height: geo.size.width)
-                        .shadow(color: Color.black ,radius: 5)
-                    
-                    Spacer()
                     
                     
                     
+                    HStack(alignment: .top, spacing: 8) {
+                        VStack {
+                            Text("Details")
+                                .foregroundColor(.black)
+                                .font(.caption)
+                        }
+                        Spacer()
+                        Divider()
+                        Spacer()
+                        VStack {
+                            Text("Details2")
+                                .foregroundColor(.black)
+                                .font(.caption)
+                            Text("Details2")
+                                .foregroundColor(.black)
+                                .font(.caption)
+                            Text("Details2")
+                                .foregroundColor(.black)
+                                .font(.caption)
+                        }
+                        Spacer()
+                        Divider()
+                        Spacer()
+                        Image(systemName: puzzleLiked ? "heart.fill" : "heart")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 30)
+                            .padding(8)
+                            .foregroundColor(puzzleLiked ? .red : .black)
+                            .onTapGesture {
+                                withAnimation {
+                                    puzzleLiked.toggle()
+                                }
+                            }
+                    }
+                    .padding(8)
+                    .frame(width: geo.size.width,height: geo.size.height / 10)
+                    .background(Color.white, in: RoundedRectangle(cornerRadius: 6))
+                    .background( Color.white.padding(.bottom, 6))
+                    
+                  
                 }
+                Spacer()
+                
             }
-            .ignoresSafeArea()
+            
         }
+        .padding(4)
         
     }
 }
@@ -212,7 +256,10 @@ struct BoardView_Previews: PreviewProvider {
     static var previews: some View {
         let viewModel = PuzzleViewModel()
         
-        BoardView().environmentObject(viewModel)
+        ZStack {
+            Color.red
+            BoardView().environmentObject(viewModel)
+        }
         
     }
     

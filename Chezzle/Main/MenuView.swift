@@ -53,7 +53,8 @@ struct MenuView: View {
                             TrainingView().environmentObject(vm)
                                 .transition(.move(edge: .trailing))
                         default:
-                            VStack {
+                            ChezzleTabBar().environmentObject(vm)
+                            /*VStack {
                                 
                                 Spacer()
                                 
@@ -116,19 +117,20 @@ struct MenuView: View {
                             }
                             .frame(width: geo.size.width)
                             .transition(.asymmetric(insertion: .push(from: .leading), removal: .push(from: .trailing)))
+                             */
                         }
                         
                         
                     }
                     
                     
-                    if (currentView != .login) {
+                    /*if (currentView != .login) {
                         DisplayBottom(currentView: $currentView, showSettings: $showSettings)
                             .environmentObject(vmLogin)
                             .padding(16)
                         
                         
-                    }
+                    }*/
                     
                 }
             }
