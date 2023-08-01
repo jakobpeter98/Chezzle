@@ -104,4 +104,19 @@ class Converter {
         default: return ""
         }
     }
+    
+    static func toSeparatedString(from: String) -> String {
+        let words = from.components(separatedBy: " ")
+        return words.joined(separator: ", ")
+    }
+    
+    static func openingTagToString(from openingTag: String) -> String {
+        let words = openingTag.components(separatedBy: " ")
+        let camelCaseWords = words.map { word -> String in
+            let components = word.components(separatedBy: "_")
+            let capitalizedComponents = components.map { $0.capitalized }
+            return capitalizedComponents.joined()
+        }
+        return camelCaseWords.joined(separator: ", ")
+    }
 }

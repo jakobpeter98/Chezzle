@@ -43,11 +43,9 @@ class PuzzleViewModel: ObservableObject {
     @Published var tries: Int = 3
     @Published var squares: [Square] = []
     
-    // Indices of Squares representing a Move
+    // Indices of Squares (0-63) representing a Move
     var sourceIndex: Int = 0
     var targetIndex: Int = 0
-    
-    
     
     // Animation variables
     @Published var animateMove = false
@@ -82,6 +80,7 @@ class PuzzleViewModel: ObservableObject {
     }
     
     func updateSquares() {
+        
         guard let puzzle = currentPuzzle else { print("no puzzle found")
             return }
         
@@ -92,19 +91,21 @@ class PuzzleViewModel: ObservableObject {
         
         let fenBoard = components[0]
         colorToMove = components[1] == "w" ? "b": "w"
+        
         var ranks = fenBoard.components(separatedBy: "/")
         
         guard ranks.count == 8 else { return }
         
-        var squareIndex = 0
-        
-        // Displaying the pieces Order reversed if the color to move is black
+
+        // Displaying the pieces order reversed if the color to move is black
         if (colorToMove == "b") {
             ranks.reverse()
             for i in 0..<ranks.count {
                 ranks[i] = String(ranks[i].reversed())
             }
         }
+        
+        var squareIndex = 0
         
         for rank in ranks {
             for char in rank {
@@ -253,7 +254,7 @@ class PuzzleRun: ObservableObject {
     var score: Int
     var streak: Int
     
-    
+    //Later Update the Users Rating
     init(usrRating: Int = 500, onUpdate: @escaping () -> Void) {
         self.usrRating = usrRating
         self.setNextPuzzle = onUpdate
@@ -270,7 +271,9 @@ class PuzzleRun: ObservableObject {
     }
     
     func reset() {
-        minRating = usrRating + score //Later Update the Users Rating
+        usrRating += score
+        minRating = usrRating + score
+        usrRating = minRating
         maxRating = minRating + minRating / 10
         tries = 3
         score = 0
@@ -300,7 +303,7 @@ class PuzzleRun: ObservableObject {
         score += ((nextPuzzle?.rating ?? 500)-usrRating) / streak
         minRating = Int(Double(minRating) * multiplicator)
         maxRating = Int(Double(maxRating) * multiplicator)
-        setNextPuzzle()
+        //setNextPuzzle()
     }
     
     func loadPuzzles(completion: (() -> Void)?) {

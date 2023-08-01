@@ -15,7 +15,16 @@ enum TabBarItem : CaseIterable {
         case .home : Text("Home")
         case .puzzle: BoardView()
         case .training: Text("training")
-        case .settings: Text("settings")
+        case .settings: SettingsView()
+        }
+    }
+    
+    var title: String {
+        switch self {
+        case .home: return "home"
+        case .puzzle: return "puzzle"
+        case .training: return "training"
+        case .settings: return "settings"
         }
     }
     
@@ -27,21 +36,31 @@ enum TabBarItem : CaseIterable {
         case .settings: return "gearshape.fill"
         }
     }
+    
+    var index: Int {
+        switch self {
+        case .home: return 0
+        case .puzzle: return 1
+        case .training: return 2
+        case .settings: return 3
+        }
+    }
+    
 }
 
 struct TabIcon: View {
     
     var imgName: String
-    var backGroundColor = Color("ColorMainDark")
-    
+    var bgColor = Color("ColorMainDark")
+    var fgColor = Color.white
     var body: some View {
         GeometryReader { geo in
             ZStack {
-                backGroundColor
+                bgColor
                 Image(systemName: imgName)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .foregroundColor(.white)
+                    .foregroundColor(fgColor)
                     .padding(geo.size.width / 8)
             }
             .frame(width: geo.size.width)
@@ -55,6 +74,7 @@ struct ChezzleTabBar: View {
     @EnvironmentObject var vm: PuzzleViewModel
     
     @State var selection: TabBarItem = .home
+    @State var lastSelection: TabBarItem = .settings
     
     var body: some View {
         GeometryReader { geo in
@@ -65,28 +85,56 @@ struct ChezzleTabBar: View {
                     .scaledToFill()
                     .contrast(0.1)
                     .brightness(0.5)
-                    .colorMultiply(selection == .training ? Color("ColorLight") : Color("ColorMainLight"))
+                    .colorMultiply(selection == .training ? Color("ColorLight"): Color("ColorMainLight"))
                 
                 ZStack {
-                 
+                    
                     selection.view
-                        .transition(.slide)
+                        .transition(.push(from: pushTrailing ? .trailing : .leading))
                         .shadow(radius: 0)
-                        .frame(width: geo.size.width)
                         .shadow(radius: 3)
                         .padding(.bottom, geo.size.height / 10)
+                        .padding(6)
+                        .frame(width: geo.size.width)
                     
                     VStack {
                         Spacer()
                         HStack(spacing: 0) {
                             ForEach(TabBarItem.allCases, id: \.self) { item in
-                                TabIcon(imgName: item.imgName, backGroundColor: selection == item ? .gray : Color("ColorMainDark"))
-                                    .onTapGesture {
-                                        selection = item
+                                VStack(spacing: 0) {
+                                    if selection == item {
+                                        Text(item.title)
+                                            .font(.title2)
+                                            .frame(width: geo.size.width / 4)
+                                            .foregroundColor(Color("ColorMain"))
+                                            .background(Color("ColorMainDark").cornerRadius(4))
+                                            .offset(y: -3)
+                                            .transition(.scale)
+                                            
                                     }
+                                    TabIcon(imgName: item.imgName, bgColor: Color.clear, fgColor: selection == item ? Color("ColorMain") : Color.white)
+                                        .onTapGesture {
+                                            
+                                            lastSelection = selection
+                                            selection = item
+                                            
+                                        }
+                                        .padding(-8)
+                                        .scaleEffect(selection == item ? 1.5 : 1)
+                                        .background(Color("ColorMainDark").cornerRadius(6))
+                                        .rotation3DEffect(.degrees(selection == item ? 30 : 0), axis: (x: 1, y: 0, z: 0))
+                                        .offset(y: selection == item ? -6 : 0)
+                                        
+                                        .padding(3)
+                                        
+                                    
+                                }
+                                .zIndex(selection == item ? 2 : 1)
+                                .animation(.interpolatingSpring(stiffness: 200, damping: 20), value: selection)
                                 
                             }
                         }
+                        .background(Color("ColorMainDark"))
                         .frame(width: geo.size.width, height: geo.size.height / 10)
                     }
                 }
@@ -102,6 +150,16 @@ struct ChezzleTabBar: View {
         }
         
     }
+    
+    var pushTrailing: Bool {
+        if lastSelection.index < selection.index {
+            return true
+        } else {
+            return false
+        }
+        
+    }
+    
 }
 
 struct ChezzleTabBar_Previews: PreviewProvider {

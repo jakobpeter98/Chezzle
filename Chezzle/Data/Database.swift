@@ -13,13 +13,17 @@ struct Puzzle {
     let fen: String
     let moves: String
     let rating: Int
+    let themes: String
+    let openingTags: String
 
     init?(document: DocumentSnapshot) {
         guard let data = document.data(),
               let id = data["id"] as? String,
               let fen = data["fen"] as? String,
               let moves = data["moves"] as? String,
-              let rating = data["rating"] as? Int
+              let rating = data["rating"] as? Int,
+              let themes = data["themes"] as? String,
+              let openingTags = data["opening_tags"] as? String
         else {
             return nil
         }
@@ -28,6 +32,8 @@ struct Puzzle {
         self.fen = fen
         self.moves = moves
         self.rating = rating
+        self.themes = themes
+        self.openingTags = openingTags
     }
 }
 

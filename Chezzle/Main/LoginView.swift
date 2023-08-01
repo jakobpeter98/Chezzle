@@ -96,8 +96,8 @@ struct LoginView: View {
                 vm.rememberUser = newValue
             })
             .alert(vm.alertText, isPresented: $vm.showAlert, actions: {})
-            .rotation3DEffect(.degrees(vm.isLoggedIn ? 180 : 0), axis: (x: 0, y: -1, z: 0))
-            .animation(.easeOut(duration: 0.5), value: vm.isLoggedIn)
+            //.rotation3DEffect(.degrees(vm.isLoggedIn ? 180 : 0), axis: (x: 0, y: -1, z: 0))
+            //.animation(.easeOut(duration: 0.5), value: vm.isLoggedIn)
             Spacer()
         }
         

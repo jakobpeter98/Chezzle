@@ -9,6 +9,8 @@ import SwiftUI
 
 struct PuzzleSolvedCard: View {
     
+    @EnvironmentObject var viewModel: PuzzleViewModel
+    
     @Binding var show: Bool
     @State var animate = false
     @State var animateStroke = false
@@ -58,6 +60,7 @@ struct PuzzleSolvedCard: View {
                 }
                 .onTapGesture {
                     show.toggle()
+                    viewModel.puzzleRun?.setNextPuzzle()
                 }
             }
         }

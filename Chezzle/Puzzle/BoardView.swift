@@ -11,8 +11,6 @@ struct BoardView: View {
     @EnvironmentObject var viewModel: PuzzleViewModel
     @State var animate = false
     
-    @State var puzzleLiked = false
-    
     var body: some View {
         GeometryReader { geo in
             VStack {
@@ -22,9 +20,7 @@ struct BoardView: View {
                     
                     
                     DisplayTop()
-                        //.padding(.horizontal,4)
-                        .padding(.vertical, 16)
-                        .shadow(color: Color.black ,radius: 2, x: 1, y: 1)
+                        
                     
                     Board(squares: viewModel.squares)
                         .shadow(radius: 0)
@@ -32,45 +28,11 @@ struct BoardView: View {
                     
                     
                     
-                    HStack(alignment: .top, spacing: 8) {
-                        VStack {
-                            Text("Details")
-                                .foregroundColor(.black)
-                                .font(.caption)
-                        }
-                        Spacer()
-                        Divider()
-                        Spacer()
-                        VStack {
-                            Text("Details2")
-                                .foregroundColor(.black)
-                                .font(.caption)
-                            Text("Details2")
-                                .foregroundColor(.black)
-                                .font(.caption)
-                            Text("Details2")
-                                .foregroundColor(.black)
-                                .font(.caption)
-                        }
-                        Spacer()
-                        Divider()
-                        Spacer()
-                        Image(systemName: puzzleLiked ? "heart.fill" : "heart")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 30)
-                            .padding(8)
-                            .foregroundColor(puzzleLiked ? .red : .black)
-                            .onTapGesture {
-                                withAnimation {
-                                    puzzleLiked.toggle()
-                                }
-                            }
-                    }
-                    .padding(8)
-                    .frame(width: geo.size.width,height: geo.size.height / 10)
-                    .background(Color.white, in: RoundedRectangle(cornerRadius: 6))
-                    .background( Color.white.padding(.bottom, 6))
+                    DisplayBottom()
+                        .padding(8)
+                        .frame(width: geo.size.width,height: geo.size.height / 10)
+                        .background(Color("ColorOffWhite"), in: RoundedRectangle(cornerRadius: 6))
+                        .background( Color("ColorOffWhite").padding(.bottom, 6))
                     
                   
                 }
@@ -79,10 +41,12 @@ struct BoardView: View {
             }
             
         }
-        .padding(4)
+
         
     }
 }
+
+
 
 struct Board: View {
     @EnvironmentObject var viewModel: PuzzleViewModel
@@ -215,6 +179,84 @@ struct SquareView: View {
     }
 }
 
+struct DisplayBottom: View {
+    
+    @EnvironmentObject var vm: PuzzleViewModel
+    @State var puzzleLiked = false
+    
+    var body: some View {
+        HStack(alignment: .top, spacing: 4) {
+            VStack(alignment: .leading, spacing: 0) {
+                HStack {
+                    Circle()
+                        .fill(vm.colorToMove == "w" ?  .white : .black)
+                        .overlay {
+                            Circle()
+                                .strokeBorder(Color.black, lineWidth: 1)
+                        
+                            
+                        }
+                                                
+                    Text(vm.colorToMove == "w" ? "White to Move!" : "Black to Move!")
+                        .foregroundColor(.black)
+                    .font(.caption)
+                    .scaledToFill()
+                }
+                .frame(height: 20)
+                
+                HStack {
+                    Text("Difficulty:")
+                        .foregroundColor(.black)
+                    .font(.caption)
+                    Text(String(vm.currentPuzzle?.rating ?? -1))
+                        .foregroundColor(.black)
+                    .font(.caption)
+
+                }
+                .frame(height: 20)
+
+
+               
+            }
+
+            Divider()
+            VStack(alignment: .leading) {
+                Text("Themes:")
+                    .foregroundColor(.black)
+                    .font(.caption)
+                Text(Converter.toSeparatedString(from: vm.currentPuzzle?.themes ?? "default"))
+                    .foregroundColor(.black)
+                    .font(.system(size: 10))
+            }
+  
+            Divider()
+
+            VStack(alignment: .leading) {
+                Text("Opening Tags:")
+                    .foregroundColor(.black)
+                    .font(.caption)
+                Text(Converter.openingTagToString(from: vm.currentPuzzle?.openingTags ?? "default"))
+                    .foregroundColor(.black)
+                    .font(.system(size: 10))
+            }
+            Divider()
+            Image(systemName: puzzleLiked ? "heart.fill" : "heart")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 30)
+                .foregroundColor(puzzleLiked ? .red : .black)
+                .onTapGesture {
+                    withAnimation {
+                        puzzleLiked.toggle()
+                    }
+                }
+                .alignmentGuide(.trailing) { vd in
+                    vd[.trailing]
+                }
+        }
+    }
+}
+
 struct DisplayTop: View {
     @EnvironmentObject var vm: PuzzleViewModel
     var body: some View {
@@ -223,7 +265,7 @@ struct DisplayTop: View {
             HStack {
                 
                 HStack {
-                    AnimatedHudItem(imageName:"arrow.up.and.down", value: vm.currentPuzzle?.rating ?? -1)
+                    AnimatedHudItem(imageName:"arrow.up.and.down", value: vm.puzzleRun?.minRating ?? -1)
                 }
                 .font(.system(size: 20).bold())
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -249,6 +291,7 @@ struct DisplayTop: View {
         }
         .background(Color("ColorMainDark"))
         .cornerRadius(6)
+        .background( Color("ColorMainDark").padding(.top, 6))
     }
 }
 

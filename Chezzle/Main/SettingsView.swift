@@ -8,18 +8,13 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @Binding var show: Bool
     @State var toggle1 = true
     @State var toggle2 = true
     @State var toggle3 = true
     @State var toggle4 = false
     @State var toggle5 = "Luis"
     
-    @State var animate = true
-    
     var body: some View {
-        ZStack{
-            
             RoundedRectangle(cornerRadius: 16)
                 .fill(Material.ultraThinMaterial)
                 .shadow(radius: 3)
@@ -35,7 +30,6 @@ struct SettingsView: View {
                 
                 HStack(alignment: .center, spacing: 0){
                     List {
-                        
                         SettingsSection(title: "Profil", img: {
                             Image(systemName:"person.fill")
                         }){
@@ -108,42 +102,8 @@ struct SettingsView: View {
                     
                     
                 }
-                HStack {
-                    Spacer()
-                    Button {
-                        withAnimation(.easeInOut(duration: 0.3)){
-                            show.toggle()
-                        }
-                        
-                    } label: {
-                        Image(systemName: "chevron.compact.down")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(height: 16)
-                            .foregroundColor(Color("ColorMainDark"))
-                            .padding(16)
-                    }
-                    .offset(y: animate ? 2: 0)
-                    .animation(.easeOut(duration: 1).repeatForever(autoreverses: true).delay(0.5), value: animate)
-                    
-                    Spacer()
-                }
-                .padding(.bottom, 64)
-                .background(Color.white.shadow(color: .black, radius: 3))
-                .onAppear {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                        animate.toggle()
-                    }
-                    
-                }
             }
         }
-        .offset(y: 64)
-        .ignoresSafeArea()
-        
-        
-        
-    }
     
 }
 
@@ -151,7 +111,6 @@ struct SettingsView: View {
 struct SettingsView_Previews: PreviewProvider {
     
     static var previews: some View {
-        @State var lol = true
-        SettingsView(show: $lol)
+        SettingsView()
     }
 }

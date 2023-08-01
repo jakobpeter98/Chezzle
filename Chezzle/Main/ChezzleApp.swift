@@ -16,9 +16,7 @@ struct ChezzleApp: App {
     let vm: PuzzleViewModel
    
     init() {
-        
         FirebaseApp.configure()
-        
         db = Database.shared
         vmLogin = LoginViewModel()
         vm = PuzzleViewModel()

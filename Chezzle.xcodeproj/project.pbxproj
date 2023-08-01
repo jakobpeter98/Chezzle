@@ -198,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				9725DE212A1779D700D92C31 /* Database.swift */,
+				97C7BBDB2A1EA23000755467 /* Converter.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -208,7 +209,6 @@
 				97AF94972A151B4000ECA7CD /* PuzzleViewModel.swift */,
 				9776F98C2A0AED1800BF47AA /* BoardView.swift */,
 				97A825742A57452B00A2D908 /* TrainingView.swift */,
-				97C7BBDB2A1EA23000755467 /* Converter.swift */,
 			);
 			path = Puzzle;
 			sourceTree = "<group>";
