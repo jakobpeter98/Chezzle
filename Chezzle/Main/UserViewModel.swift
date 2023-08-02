@@ -7,7 +7,7 @@
 import Firebase
 import Foundation
 
-class LoginViewModel: ObservableObject {
+class UserViewModel: ObservableObject {
     
     @Published var isLoggedIn = false
     @Published var isVerified = false

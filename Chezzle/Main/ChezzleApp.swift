@@ -9,25 +9,20 @@ import SwiftUI
 
 @main
 struct ChezzleApp: App {
-    
     //Initializing
     let db: Database
-    let vmLogin: LoginViewModel
-    let vm: PuzzleViewModel
+    @StateObject var vmLogin = UserViewModel()
+    @StateObject var vm = PuzzleViewModel()
    
     init() {
         FirebaseApp.configure()
         db = Database.shared
-        vmLogin = LoginViewModel()
-        vm = PuzzleViewModel()
     }
-    
-    
     var body: some Scene {
         WindowGroup {
-            MenuView(vmLogin: vmLogin)
+            MenuView()
+                .environmentObject(vmLogin)
                 .environmentObject(vm)
-                
         }
     }
 }

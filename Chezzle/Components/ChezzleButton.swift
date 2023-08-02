@@ -33,7 +33,8 @@ struct ChezzleButton: View {
                             
                             if let text = text {
                                 Text(text)
-                                    .font(.system(size: min(geo.size.width, geo.size.height) * 0.7).bold())
+                                    .font(.custom("Noto Serif Vithkuqi", size: 20))
+                                    .fontWeight(Font.Weight.bold)
                                     .minimumScaleFactor(0.1)
                                 
                                     .foregroundStyle((isAction ? actionColor: fgColor).shadow(.inner(radius: isAction ? 0 : min(geo.size.width, geo.size.height)/50))

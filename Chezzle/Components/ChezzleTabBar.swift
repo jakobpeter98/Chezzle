@@ -12,7 +12,7 @@ enum TabBarItem : CaseIterable {
     
     @ViewBuilder var view: some View {
         switch self {
-        case .home : Text("Home")
+        case .home : HomeView()
         case .puzzle: BoardView()
         case .training: Text("training")
         case .settings: SettingsView()
@@ -90,12 +90,12 @@ struct ChezzleTabBar: View {
                 ZStack {
                     
                     selection.view
-                        .transition(.push(from: pushTrailing ? .trailing : .leading))
                         .shadow(radius: 0)
                         .shadow(radius: 3)
                         .padding(.bottom, geo.size.height / 10)
                         .padding(6)
                         .frame(width: geo.size.width)
+                        .transition(.asymmetric(insertion: .push(from: pushTrailing ? .trailing : .leading), removal: .opacity))
                     
                     VStack {
                         Spacer()
@@ -104,11 +104,11 @@ struct ChezzleTabBar: View {
                                 VStack(spacing: 0) {
                                     if selection == item {
                                         Text(item.title)
-                                            .font(.title2)
+                                            .font(.custom("Noto Serif Vithkuqi", size: 20))
                                             .frame(width: geo.size.width / 4)
                                             .foregroundColor(Color("ColorMain"))
                                             .background(Color("ColorMainDark").cornerRadius(4))
-                                            .offset(y: -3)
+//                                            .offset(y: -3)
                                             .transition(.scale)
                                             
                                     }
@@ -132,8 +132,10 @@ struct ChezzleTabBar: View {
                                 .zIndex(selection == item ? 2 : 1)
                                 .animation(.interpolatingSpring(stiffness: 200, damping: 20), value: selection)
                                 
+                                
                             }
                         }
+                        .padding(4)
                         .background(Color("ColorMainDark"))
                         .frame(width: geo.size.width, height: geo.size.height / 10)
                     }

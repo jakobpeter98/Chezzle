@@ -8,7 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		9725DE222A1779D700D92C31 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9725DE212A1779D700D92C31 /* Database.swift */; };
-		972922292A2DCF2D00D31A3B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972922282A2DCF2D00D31A3B /* LoginViewModel.swift */; };
+		97264AA42A7A9B4400B85C30 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 97264AA32A7A9B4400B85C30 /* GoogleService-Info.plist */; };
+		97264AA62A7AAC1700B85C30 /* NotoSerifVithkuqi-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 97264AA52A7AAC1700B85C30 /* NotoSerifVithkuqi-VariableFont_wght.ttf */; };
+		97264AA92A7AAEFA00B85C30 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97264AA82A7AAEFA00B85C30 /* HomeView.swift */; };
+		972922292A2DCF2D00D31A3B /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972922282A2DCF2D00D31A3B /* UserViewModel.swift */; };
 		9739CC512A1E1DC6008071C7 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9739CC502A1E1DC6008071C7 /* MenuView.swift */; };
 		977629F12A5EBCCC00B046BD /* ChezzleTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977629F02A5EBCCC00B046BD /* ChezzleTabBar.swift */; };
 		9776F95C2A0AE40B00BF47AA /* ChezzleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9776F95B2A0AE40B00BF47AA /* ChezzleApp.swift */; };
@@ -18,7 +21,6 @@
 		9776F9782A0AE40D00BF47AA /* ChezzleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9776F9772A0AE40D00BF47AA /* ChezzleUITests.swift */; };
 		9776F97A2A0AE40D00BF47AA /* ChezzleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9776F9792A0AE40D00BF47AA /* ChezzleUITestsLaunchTests.swift */; };
 		9776F98D2A0AED1800BF47AA /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9776F98C2A0AED1800BF47AA /* BoardView.swift */; };
-		979D0B782A584D9000BD2FCB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 979D0B772A584D9000BD2FCB /* GoogleService-Info.plist */; };
 		97A825682A573E2700A2D908 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A825672A573E2700A2D908 /* LoginView.swift */; };
 		97A8256B2A573EC900A2D908 /* ChezzleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A8256A2A573EC900A2D908 /* ChezzleButton.swift */; };
 		97A8256D2A573EDD00A2D908 /* AnimatedHudItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A8256C2A573EDD00A2D908 /* AnimatedHudItem.swift */; };
@@ -55,7 +57,11 @@
 
 /* Begin PBXFileReference section */
 		9725DE212A1779D700D92C31 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
-		972922282A2DCF2D00D31A3B /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		97264AA32A7A9B4400B85C30 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		97264AA52A7AAC1700B85C30 /* NotoSerifVithkuqi-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSerifVithkuqi-VariableFont_wght.ttf"; path = "Chezzle/Assets/NotoSerifVithkuqi-VariableFont_wght.ttf"; sourceTree = SOURCE_ROOT; };
+		97264AA72A7AAC3000B85C30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		97264AA82A7AAEFA00B85C30 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		972922282A2DCF2D00D31A3B /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		9739CC502A1E1DC6008071C7 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		977629F02A5EBCCC00B046BD /* ChezzleTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChezzleTabBar.swift; sourceTree = "<group>"; };
 		9776F9582A0AE40B00BF47AA /* Chezzle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chezzle.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,7 +75,6 @@
 		9776F9772A0AE40D00BF47AA /* ChezzleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChezzleUITests.swift; sourceTree = "<group>"; };
 		9776F9792A0AE40D00BF47AA /* ChezzleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChezzleUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9776F98C2A0AED1800BF47AA /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
-		979D0B772A584D9000BD2FCB /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		97A825672A573E2700A2D908 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		97A8256A2A573EC900A2D908 /* ChezzleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChezzleButton.swift; sourceTree = "<group>"; };
 		97A8256C2A573EDD00A2D908 /* AnimatedHudItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedHudItem.swift; sourceTree = "<group>"; };
@@ -119,6 +124,35 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		97264AAA2A7AB94700B85C30 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9739CC502A1E1DC6008071C7 /* MenuView.swift */,
+				97264AA82A7AAEFA00B85C30 /* HomeView.swift */,
+				97A825672A573E2700A2D908 /* LoginView.swift */,
+				97DF05612A56FFD00053BA93 /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		97264AAB2A7AB98500B85C30 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				97A825742A57452B00A2D908 /* TrainingView.swift */,
+				9776F98C2A0AED1800BF47AA /* BoardView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		97264AAC2A7AB9B500B85C30 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				9776F95F2A0AE40D00BF47AA /* Assets.xcassets */,
+				97264AA52A7AAC1700B85C30 /* NotoSerifVithkuqi-VariableFont_wght.ttf */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		9776F94F2A0AE40B00BF47AA = {
 			isa = PBXGroup;
 			children = (
@@ -146,10 +180,11 @@
 				97C7BBDD2A1EA26A00755467 /* Data */,
 				97C7BBDF2A1EA2B900755467 /* Main */,
 				97C7BBDE2A1EA28300755467 /* Puzzle */,
-				97A825692A573E6C00A2D908 /* CustomUI */,
-				9776F95F2A0AE40D00BF47AA /* Assets.xcassets */,
+				97A825692A573E6C00A2D908 /* Components */,
+				97264AAC2A7AB9B500B85C30 /* Assets */,
+				97264AA32A7A9B4400B85C30 /* GoogleService-Info.plist */,
+				97264AA72A7AAC3000B85C30 /* Info.plist */,
 				9776F9612A0AE40D00BF47AA /* Chezzle.entitlements */,
-				979D0B772A584D9000BD2FCB /* GoogleService-Info.plist */,
 				9776F9622A0AE40D00BF47AA /* Preview Content */,
 			);
 			path = Chezzle;
@@ -180,7 +215,7 @@
 			path = ChezzleUITests;
 			sourceTree = "<group>";
 		};
-		97A825692A573E6C00A2D908 /* CustomUI */ = {
+		97A825692A573E6C00A2D908 /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				97A8256A2A573EC900A2D908 /* ChezzleButton.swift */,
@@ -191,7 +226,7 @@
 				97A825782A57873600A2D908 /* PuzzleSolvedCard.swift */,
 				977629F02A5EBCCC00B046BD /* ChezzleTabBar.swift */,
 			);
-			path = CustomUI;
+			path = Components;
 			sourceTree = "<group>";
 		};
 		97C7BBDD2A1EA26A00755467 /* Data */ = {
@@ -207,8 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				97AF94972A151B4000ECA7CD /* PuzzleViewModel.swift */,
-				9776F98C2A0AED1800BF47AA /* BoardView.swift */,
-				97A825742A57452B00A2D908 /* TrainingView.swift */,
+				97264AAB2A7AB98500B85C30 /* Views */,
 			);
 			path = Puzzle;
 			sourceTree = "<group>";
@@ -217,10 +251,8 @@
 			isa = PBXGroup;
 			children = (
 				9776F95B2A0AE40B00BF47AA /* ChezzleApp.swift */,
-				9739CC502A1E1DC6008071C7 /* MenuView.swift */,
-				972922282A2DCF2D00D31A3B /* LoginViewModel.swift */,
-				97DF05612A56FFD00053BA93 /* SettingsView.swift */,
-				97A825672A573E2700A2D908 /* LoginView.swift */,
+				972922282A2DCF2D00D31A3B /* UserViewModel.swift */,
+				97264AAA2A7AB94700B85C30 /* Views */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -338,9 +370,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97264AA62A7AAC1700B85C30 /* NotoSerifVithkuqi-VariableFont_wght.ttf in Resources */,
 				9776F9642A0AE40D00BF47AA /* Preview Assets.xcassets in Resources */,
 				9776F9602A0AE40D00BF47AA /* Assets.xcassets in Resources */,
-				979D0B782A584D9000BD2FCB /* GoogleService-Info.plist in Resources */,
+				97264AA42A7A9B4400B85C30 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,11 +407,12 @@
 				9725DE222A1779D700D92C31 /* Database.swift in Sources */,
 				97A8256F2A573EF200A2D908 /* SettingsSection.swift in Sources */,
 				97A825712A573F4000A2D908 /* CheckBoxStyle.swift in Sources */,
+				97264AA92A7AAEFA00B85C30 /* HomeView.swift in Sources */,
 				9776F95C2A0AE40B00BF47AA /* ChezzleApp.swift in Sources */,
 				97C7BBDC2A1EA23000755467 /* Converter.swift in Sources */,
 				977629F12A5EBCCC00B046BD /* ChezzleTabBar.swift in Sources */,
 				97A8256D2A573EDD00A2D908 /* AnimatedHudItem.swift in Sources */,
-				972922292A2DCF2D00D31A3B /* LoginViewModel.swift in Sources */,
+				972922292A2DCF2D00D31A3B /* UserViewModel.swift in Sources */,
 				97A825772A576E2D00A2D908 /* TagButton.swift in Sources */,
 				97A825752A57452B00A2D908 /* TrainingView.swift in Sources */,
 				97A8256B2A573EC900A2D908 /* ChezzleButton.swift in Sources */,
@@ -539,6 +573,7 @@
 				DEVELOPMENT_TEAM = QA939389RF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Chezzle/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -575,6 +610,7 @@
 				DEVELOPMENT_TEAM = QA939389RF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Chezzle/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
