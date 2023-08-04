@@ -33,7 +33,7 @@ struct MenuView: View {
                 .scaledToFill()
                 .contrast(0.1)
                 .brightness(0.5)
-                .colorMultiply(Color("ColorMainLight"))
+                .colorMultiply(AppColor.mainLight)
                 .ignoresSafeArea()
             
             ZStack {

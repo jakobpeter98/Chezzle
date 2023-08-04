@@ -236,7 +236,7 @@ class Square: ObservableObject {
 }
 
 class PuzzleRun: ObservableObject {
-    let dao: Database = Database.shared
+    let db: Database = Database.shared
     
     var isFirst = true
     
@@ -307,7 +307,7 @@ class PuzzleRun: ObservableObject {
     }
     
     func loadPuzzles(completion: (() -> Void)?) {
-        dao.loadPuzzles(minRating: minRating, maxRating: maxRating, limit: 20) { [weak self] puzzles in
+        db.loadPuzzles(minRating: minRating, maxRating: maxRating, limit: 20) { [weak self] puzzles in
             DispatchQueue.main.async {
                 self?.puzzles = puzzles
                 self?.nextPuzzle = puzzles.randomElement()

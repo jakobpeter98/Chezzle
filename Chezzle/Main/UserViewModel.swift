@@ -55,6 +55,7 @@ class UserViewModel: ObservableObject {
             }
         }
     }
+    
     func signIn() {
         
         self.auth.signIn(withEmail: self.usrMail, password: self.usrPswd) {result, error in
@@ -97,6 +98,7 @@ class UserViewModel: ObservableObject {
         }
         
     }
+    
     func sendVerificationEmail(){
         if self.auth.currentUser != nil {
             

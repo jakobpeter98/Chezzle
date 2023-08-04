@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct ChezzleButton: View {
-    @State var bgColor = Color("ColorMainDark")
+    @State var bgColor = AppColor.mainDark
     @State var fgColor = Color.white
     @State var text: String? = nil
     @State var imgName: String? = nil
-    @State var actionColor = Color("ColorMain")
+    @State var actionColor = AppColor.main
     @State var isAction = false
     @State var autoRevert = true
     var action: () -> Void
@@ -33,7 +33,7 @@ struct ChezzleButton: View {
                             
                             if let text = text {
                                 Text(text)
-                                    .font(.custom("Noto Serif Vithkuqi", size: 20))
+                                    .font(.custom(AppFontName.title2, size: 20))
                                     .fontWeight(Font.Weight.bold)
                                     .minimumScaleFactor(0.1)
                                 
@@ -71,7 +71,7 @@ struct ChezzleButton: View {
 
 struct ChezzleButton_Previews: PreviewProvider {
     static var previews: some View {
-        ChezzleButton(text: "ChezzleButton", imgName: "star.fill", autoRevert: false){
+        ChezzleButton(text: "ChezzleButton", imgName: "star.fill", autoRevert: true){
             print("ChezzleButton clicked")
         }.frame(width: 200,height: 50)
     }

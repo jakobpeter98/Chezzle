@@ -14,7 +14,7 @@ enum TabBarItem : CaseIterable {
         switch self {
         case .home : HomeView()
         case .puzzle: BoardView()
-        case .training: Text("training")
+        case .training: TrainingView()
         case .settings: SettingsView()
         }
     }
@@ -108,6 +108,7 @@ struct ChezzleTabBar: View {
                     .contrast(0.1)
                     .brightness(0.5)
                     .colorMultiply(bgColor)
+                    .ignoresSafeArea()
                 
                 ZStack {
                     
@@ -118,6 +119,7 @@ struct ChezzleTabBar: View {
                         .padding(6)
                         .frame(width: geo.size.width)
                         .transition(.asymmetric(insertion: .push(from: pushTrailing ? .trailing : .leading), removal: .opacity))
+                        .animation(.interpolatingSpring(stiffness: 200, damping: 20), value: selection)
                     
                     VStack {
                         Spacer()
@@ -156,7 +158,7 @@ struct ChezzleTabBar: View {
                                         )
                                         )
                                 .zIndex(selection == item ? 2 : 1)
-                                .animation(.interpolatingSpring(stiffness: 200, damping: 20), value: selection)
+                                .animation(.easeOut(duration: 0.3), value: selection)
                                 
                             }
                         }
@@ -167,8 +169,6 @@ struct ChezzleTabBar: View {
                 }
             }
             .frame(width: geo.size.width)
-            
-            .ignoresSafeArea()
             .animation(.easeInOut(duration: 0.3), value: selection)
             
             

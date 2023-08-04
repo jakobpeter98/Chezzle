@@ -13,6 +13,7 @@
 		97264AA92A7AAEFA00B85C30 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97264AA82A7AAEFA00B85C30 /* HomeView.swift */; };
 		972922292A2DCF2D00D31A3B /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972922282A2DCF2D00D31A3B /* UserViewModel.swift */; };
 		9739CC512A1E1DC6008071C7 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9739CC502A1E1DC6008071C7 /* MenuView.swift */; };
+		975A7F962A7D0302002C9D89 /* Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975A7F952A7D0302002C9D89 /* Values.swift */; };
 		977629F12A5EBCCC00B046BD /* ChezzleTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977629F02A5EBCCC00B046BD /* ChezzleTabBar.swift */; };
 		9776F95C2A0AE40B00BF47AA /* ChezzleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9776F95B2A0AE40B00BF47AA /* ChezzleApp.swift */; };
 		9776F9602A0AE40D00BF47AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9776F95F2A0AE40D00BF47AA /* Assets.xcassets */; };
@@ -63,6 +64,7 @@
 		97264AA82A7AAEFA00B85C30 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		972922282A2DCF2D00D31A3B /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		9739CC502A1E1DC6008071C7 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		975A7F952A7D0302002C9D89 /* Values.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Values.swift; sourceTree = "<group>"; };
 		977629F02A5EBCCC00B046BD /* ChezzleTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChezzleTabBar.swift; sourceTree = "<group>"; };
 		9776F9582A0AE40B00BF47AA /* Chezzle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chezzle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9776F95B2A0AE40B00BF47AA /* ChezzleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChezzleApp.swift; sourceTree = "<group>"; };
@@ -138,8 +140,8 @@
 		97264AAB2A7AB98500B85C30 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				97A825742A57452B00A2D908 /* TrainingView.swift */,
 				9776F98C2A0AED1800BF47AA /* BoardView.swift */,
+				97A825742A57452B00A2D908 /* TrainingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -235,6 +237,7 @@
 			children = (
 				9725DE212A1779D700D92C31 /* Database.swift */,
 				97C7BBDB2A1EA23000755467 /* Converter.swift */,
+				975A7F952A7D0302002C9D89 /* Values.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 				97A825682A573E2700A2D908 /* LoginView.swift in Sources */,
 				97AF94982A151B4000ECA7CD /* PuzzleViewModel.swift in Sources */,
 				9725DE222A1779D700D92C31 /* Database.swift in Sources */,
+				975A7F962A7D0302002C9D89 /* Values.swift in Sources */,
 				97A8256F2A573EF200A2D908 /* SettingsSection.swift in Sources */,
 				97A825712A573F4000A2D908 /* CheckBoxStyle.swift in Sources */,
 				97264AA92A7AAEFA00B85C30 /* HomeView.swift in Sources */,

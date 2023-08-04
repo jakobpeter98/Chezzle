@@ -70,6 +70,8 @@ struct AnimatedHudItem_Previews: PreviewProvider {
         VStack{
             AnimatedHudItem(imageName: "person.fill", value: 12)
         }
+        .padding()
+        .background(AppColor.mainDark)
         
     }
 }
