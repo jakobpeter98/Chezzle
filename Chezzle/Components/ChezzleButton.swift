@@ -12,7 +12,7 @@ struct ChezzleButton: View {
     @State var fgColor = Color.white
     @State var text: String? = nil
     @State var imgName: String? = nil
-    @State var actionColor = Color("ColorMainLight")
+    @State var actionColor = Color("ColorMain")
     @State var isAction = false
     @State var autoRevert = true
     var action: () -> Void

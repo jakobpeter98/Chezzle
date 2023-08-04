@@ -15,10 +15,6 @@ struct SettingsView: View {
     @State var toggle5 = "Luis"
     
     var body: some View {
-            RoundedRectangle(cornerRadius: 16)
-                .fill(Material.ultraThinMaterial)
-                .shadow(radius: 3)
-                            
             VStack(alignment: .leading, spacing: 0){
                 
                 Text("Settings")
@@ -31,11 +27,12 @@ struct SettingsView: View {
                 HStack(alignment: .center, spacing: 0){
                     List {
                         SettingsSection(title: "Profil", img: {
-                            Image(systemName:"person.fill")
-                        }){
-                            TextField("Name", text: $toggle5)
-                            TextField("Name", text: $toggle5)
+                                Image(systemName:"person.fill")
+                            }){
+                                TextField("Name", text: $toggle5)
+                                TextField("Name", text: $toggle5)
                         }
+                        
                         
                         SettingsSection(title: "This is a Section") {
                             
@@ -111,6 +108,9 @@ struct SettingsView: View {
 struct SettingsView_Previews: PreviewProvider {
     
     static var previews: some View {
-        SettingsView()
+        ZStack {
+            Color("ColorMainDark")
+            SettingsView()
+        }
     }
 }

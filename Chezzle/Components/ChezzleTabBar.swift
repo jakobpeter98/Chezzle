@@ -76,6 +76,28 @@ struct ChezzleTabBar: View {
     @State var selection: TabBarItem = .home
     @State var lastSelection: TabBarItem = .settings
     
+    var pushTrailing: Bool {
+        if lastSelection.index < selection.index {
+            return true
+        } else {
+            return false
+        }
+        
+    }
+    
+    var bgColor : Color {
+        switch selection {
+        case .home:
+            return Color("ColorMainLight")
+        case .puzzle:
+            return Color("ColorMainLight")
+        case .training:
+            return Color("ColorLight")
+        case .settings:
+            return Color("ColorDark")
+        }
+    }
+    
     var body: some View {
         GeometryReader { geo in
             
@@ -85,7 +107,7 @@ struct ChezzleTabBar: View {
                     .scaledToFill()
                     .contrast(0.1)
                     .brightness(0.5)
-                    .colorMultiply(selection == .training ? Color("ColorLight"): Color("ColorMainLight"))
+                    .colorMultiply(bgColor)
                 
                 ZStack {
                     
@@ -102,16 +124,16 @@ struct ChezzleTabBar: View {
                         HStack(spacing: 0) {
                             ForEach(TabBarItem.allCases, id: \.self) { item in
                                 VStack(spacing: 0) {
+                                    
                                     if selection == item {
                                         Text(item.title)
                                             .font(.custom("Noto Serif Vithkuqi", size: 20))
                                             .frame(width: geo.size.width / 4)
                                             .foregroundColor(Color("ColorMain"))
-                                            .background(Color("ColorMainDark").cornerRadius(4))
-//                                            .offset(y: -3)
                                             .transition(.scale)
                                             
                                     }
+                                    
                                     TabIcon(imgName: item.imgName, bgColor: Color.clear, fgColor: selection == item ? Color("ColorMain") : Color.white)
                                         .onTapGesture {
                                             
@@ -120,44 +142,39 @@ struct ChezzleTabBar: View {
                                             
                                         }
                                         .padding(-8)
-                                        .scaleEffect(selection == item ? 1.5 : 1)
-                                        .background(Color("ColorMainDark").cornerRadius(6))
                                         .rotation3DEffect(.degrees(selection == item ? 30 : 0), axis: (x: 1, y: 0, z: 0))
                                         .offset(y: selection == item ? -6 : 0)
                                         
-                                        .padding(3)
-                                        
                                     
                                 }
+                                .padding(8)
+                                .frame(width: geo.size.width / 4)
+                                .background(
+                                    Color("ColorMainDark")
+                                        .shadow(
+                                            .inner(color: selection == item ? .black : Color("ColorMainDark"), radius: 3, x: 0, y: -1)
+                                        )
+                                        )
                                 .zIndex(selection == item ? 2 : 1)
                                 .animation(.interpolatingSpring(stiffness: 200, damping: 20), value: selection)
                                 
-                                
                             }
                         }
-                        .padding(4)
-                        .background(Color("ColorMainDark"))
                         .frame(width: geo.size.width, height: geo.size.height / 10)
+                        .background(Color("ColorMainDark"))
+                        
                     }
                 }
             }
             .frame(width: geo.size.width)
+            
             .ignoresSafeArea()
-            .animation(.interpolatingSpring(stiffness: 200, damping: 20), value: selection)
+            .animation(.easeInOut(duration: 0.3), value: selection)
             
             
             
             
             
-        }
-        
-    }
-    
-    var pushTrailing: Bool {
-        if lastSelection.index < selection.index {
-            return true
-        } else {
-            return false
         }
         
     }

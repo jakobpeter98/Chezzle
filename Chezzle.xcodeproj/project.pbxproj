@@ -177,6 +177,7 @@
 		9776F95A2A0AE40B00BF47AA /* Chezzle */ = {
 			isa = PBXGroup;
 			children = (
+				9776F95B2A0AE40B00BF47AA /* ChezzleApp.swift */,
 				97C7BBDD2A1EA26A00755467 /* Data */,
 				97C7BBDF2A1EA2B900755467 /* Main */,
 				97C7BBDE2A1EA28300755467 /* Puzzle */,
@@ -241,8 +242,8 @@
 		97C7BBDE2A1EA28300755467 /* Puzzle */ = {
 			isa = PBXGroup;
 			children = (
-				97AF94972A151B4000ECA7CD /* PuzzleViewModel.swift */,
 				97264AAB2A7AB98500B85C30 /* Views */,
+				97AF94972A151B4000ECA7CD /* PuzzleViewModel.swift */,
 			);
 			path = Puzzle;
 			sourceTree = "<group>";
@@ -250,9 +251,8 @@
 		97C7BBDF2A1EA2B900755467 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				9776F95B2A0AE40B00BF47AA /* ChezzleApp.swift */,
-				972922282A2DCF2D00D31A3B /* UserViewModel.swift */,
 				97264AAA2A7AB94700B85C30 /* Views */,
+				972922282A2DCF2D00D31A3B /* UserViewModel.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
