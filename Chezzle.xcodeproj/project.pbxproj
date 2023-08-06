@@ -27,7 +27,7 @@
 		97A8256D2A573EDD00A2D908 /* AnimatedHudItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A8256C2A573EDD00A2D908 /* AnimatedHudItem.swift */; };
 		97A8256F2A573EF200A2D908 /* SettingsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A8256E2A573EF200A2D908 /* SettingsSection.swift */; };
 		97A825712A573F4000A2D908 /* CheckBoxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A825702A573F4000A2D908 /* CheckBoxStyle.swift */; };
-		97A825752A57452B00A2D908 /* TrainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A825742A57452B00A2D908 /* TrainingView.swift */; };
+		97A825752A57452B00A2D908 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A825742A57452B00A2D908 /* LibraryView.swift */; };
 		97A825772A576E2D00A2D908 /* TagButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A825762A576E2D00A2D908 /* TagButton.swift */; };
 		97A825792A57873700A2D908 /* PuzzleSolvedCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A825782A57873600A2D908 /* PuzzleSolvedCard.swift */; };
 		97AF94982A151B4000ECA7CD /* PuzzleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AF94972A151B4000ECA7CD /* PuzzleViewModel.swift */; };
@@ -82,7 +82,7 @@
 		97A8256C2A573EDD00A2D908 /* AnimatedHudItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedHudItem.swift; sourceTree = "<group>"; };
 		97A8256E2A573EF200A2D908 /* SettingsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSection.swift; sourceTree = "<group>"; };
 		97A825702A573F4000A2D908 /* CheckBoxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxStyle.swift; sourceTree = "<group>"; };
-		97A825742A57452B00A2D908 /* TrainingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingView.swift; sourceTree = "<group>"; };
+		97A825742A57452B00A2D908 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		97A825762A576E2D00A2D908 /* TagButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagButton.swift; sourceTree = "<group>"; };
 		97A825782A57873600A2D908 /* PuzzleSolvedCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleSolvedCard.swift; sourceTree = "<group>"; };
 		97AF94972A151B4000ECA7CD /* PuzzleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleViewModel.swift; sourceTree = "<group>"; };
@@ -141,7 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				9776F98C2A0AED1800BF47AA /* BoardView.swift */,
-				97A825742A57452B00A2D908 /* TrainingView.swift */,
+				97A825742A57452B00A2D908 /* LibraryView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -418,7 +418,7 @@
 				97A8256D2A573EDD00A2D908 /* AnimatedHudItem.swift in Sources */,
 				972922292A2DCF2D00D31A3B /* UserViewModel.swift in Sources */,
 				97A825772A576E2D00A2D908 /* TagButton.swift in Sources */,
-				97A825752A57452B00A2D908 /* TrainingView.swift in Sources */,
+				97A825752A57452B00A2D908 /* LibraryView.swift in Sources */,
 				97A8256B2A573EC900A2D908 /* ChezzleButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

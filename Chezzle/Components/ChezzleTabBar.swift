@@ -7,47 +7,6 @@
 
 import SwiftUI
 
-enum TabBarItem : CaseIterable {
-    case home, puzzle, training, settings
-    
-    @ViewBuilder var view: some View {
-        switch self {
-        case .home : HomeView()
-        case .puzzle: BoardView()
-        case .training: TrainingView()
-        case .settings: SettingsView()
-        }
-    }
-    
-    var title: String {
-        switch self {
-        case .home: return "home"
-        case .puzzle: return "puzzle"
-        case .training: return "training"
-        case .settings: return "settings"
-        }
-    }
-    
-    var imgName: String {
-        switch self {
-        case .home: return "house.fill"
-        case .puzzle: return "puzzlepiece.extension.fill"
-        case .training: return "dumbbell.fill"
-        case .settings: return "gearshape.fill"
-        }
-    }
-    
-    var index: Int {
-        switch self {
-        case .home: return 0
-        case .puzzle: return 1
-        case .training: return 2
-        case .settings: return 3
-        }
-    }
-    
-}
-
 struct TabIcon: View {
     
     var imgName: String
@@ -88,27 +47,28 @@ struct ChezzleTabBar: View {
     var bgColor : Color {
         switch selection {
         case .home:
-            return Color("ColorMainLight")
+            return AppColor.light
         case .puzzle:
-            return Color("ColorMainLight")
-        case .training:
-            return Color("ColorLight")
+            return AppColor.mainLight
+        case .library:
+            return AppColor.light
         case .settings:
-            return Color("ColorDark")
+            return AppColor.dark
         }
     }
     
     var body: some View {
         GeometryReader { geo in
-            
-            ZStack {
                 Image("BackgroundImage")
                     .resizable()
                     .scaledToFill()
                     .contrast(0.1)
                     .brightness(0.5)
+                    .animation(.easeIn(duration: 0.7).delay(0.1), value: selection)
                     .colorMultiply(bgColor)
                     .ignoresSafeArea()
+                    .opacity(selection == .home ? 0.3 : 1)
+                    .animation(.easeInOut(duration: 0.7), value: selection)
                 
                 ZStack {
                     
@@ -116,7 +76,8 @@ struct ChezzleTabBar: View {
                         .shadow(radius: 0)
                         .shadow(radius: 3)
                         .padding(.bottom, geo.size.height / 10)
-                        .padding(6)
+                        .padding(.top, 6)
+                        .padding(.horizontal, 6)
                         .frame(width: geo.size.width)
                         .transition(.asymmetric(insertion: .push(from: pushTrailing ? .trailing : .leading), removal: .opacity))
                         .animation(.interpolatingSpring(stiffness: 200, damping: 20), value: selection)
@@ -167,16 +128,10 @@ struct ChezzleTabBar: View {
                         
                     }
                 }
+                .frame(width: geo.size.width)
+                .animation(.easeInOut(duration: 0.3), value: selection)
             }
-            .frame(width: geo.size.width)
-            .animation(.easeInOut(duration: 0.3), value: selection)
             
-            
-            
-            
-            
-        }
-        
     }
     
 }
