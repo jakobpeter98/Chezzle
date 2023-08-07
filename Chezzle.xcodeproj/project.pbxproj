@@ -22,6 +22,7 @@
 		9776F9782A0AE40D00BF47AA /* ChezzleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9776F9772A0AE40D00BF47AA /* ChezzleUITests.swift */; };
 		9776F97A2A0AE40D00BF47AA /* ChezzleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9776F9792A0AE40D00BF47AA /* ChezzleUITestsLaunchTests.swift */; };
 		9776F98D2A0AED1800BF47AA /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9776F98C2A0AED1800BF47AA /* BoardView.swift */; };
+		9778C3732A80FC8F00A0DFAE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9778C3722A80FC8F00A0DFAE /* User.swift */; };
 		97A825682A573E2700A2D908 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A825672A573E2700A2D908 /* LoginView.swift */; };
 		97A8256B2A573EC900A2D908 /* ChezzleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A8256A2A573EC900A2D908 /* ChezzleButton.swift */; };
 		97A8256D2A573EDD00A2D908 /* AnimatedHudItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A8256C2A573EDD00A2D908 /* AnimatedHudItem.swift */; };
@@ -77,6 +78,7 @@
 		9776F9772A0AE40D00BF47AA /* ChezzleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChezzleUITests.swift; sourceTree = "<group>"; };
 		9776F9792A0AE40D00BF47AA /* ChezzleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChezzleUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9776F98C2A0AED1800BF47AA /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
+		9778C3722A80FC8F00A0DFAE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		97A825672A573E2700A2D908 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		97A8256A2A573EC900A2D908 /* ChezzleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChezzleButton.swift; sourceTree = "<group>"; };
 		97A8256C2A573EDD00A2D908 /* AnimatedHudItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedHudItem.swift; sourceTree = "<group>"; };
@@ -218,6 +220,14 @@
 			path = ChezzleUITests;
 			sourceTree = "<group>";
 		};
+		9778C3712A80FC5A00A0DFAE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9778C3722A80FC8F00A0DFAE /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		97A825692A573E6C00A2D908 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,6 +245,7 @@
 		97C7BBDD2A1EA26A00755467 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				9778C3712A80FC5A00A0DFAE /* Models */,
 				9725DE212A1779D700D92C31 /* Database.swift */,
 				97C7BBDB2A1EA23000755467 /* Converter.swift */,
 				975A7F952A7D0302002C9D89 /* Values.swift */,
@@ -409,6 +420,7 @@
 				97AF94982A151B4000ECA7CD /* PuzzleViewModel.swift in Sources */,
 				9725DE222A1779D700D92C31 /* Database.swift in Sources */,
 				975A7F962A7D0302002C9D89 /* Values.swift in Sources */,
+				9778C3732A80FC8F00A0DFAE /* User.swift in Sources */,
 				97A8256F2A573EF200A2D908 /* SettingsSection.swift in Sources */,
 				97A825712A573F4000A2D908 /* CheckBoxStyle.swift in Sources */,
 				97264AA92A7AAEFA00B85C30 /* HomeView.swift in Sources */,

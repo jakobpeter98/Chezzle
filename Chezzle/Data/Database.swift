@@ -41,13 +41,23 @@ class Database {
     static let shared = Database()
 
     private let db: Firestore
-
+    
     private init() {
         db = Firestore.firestore()
     }
+    
+    private var userCollection: CollectionReference {
+        return db.collection("user")
+    }
+     
+    private var puzzleCollection: CollectionReference {
+        return db.collection("puzzles")
+    }
+
+    
 
     func loadPuzzles(minRating: Int, maxRating: Int, limit: Int, completion: @escaping ([Puzzle]) -> Void) {
-        let query = db.collection("puzzles")
+        let query = puzzleCollection
                         .whereField("rating", isGreaterThanOrEqualTo: minRating)
                         .whereField("rating", isLessThanOrEqualTo: maxRating)
                         .limit(to: limit)
@@ -65,6 +75,11 @@ class Database {
             // Call the completion handler with the fetched puzzles
             completion(puzzles)
         }
+    }
+    
+    func createUser(with id: String) async throws {
+        try await userCollection.document(id)
+      
     }
 }
 
