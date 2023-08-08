@@ -42,14 +42,10 @@ class Database {
     
     static let shared = Database()
 
-    private let db: Firestore
-    
-    private init() {
-        db = Firestore.firestore()
-    }
+    private let db = Firestore.firestore()
     
     private var userCollection: CollectionReference {
-        return db.collection("user")
+        return db.collection("users")
     }
      
     private var puzzleCollection: CollectionReference {

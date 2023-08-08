@@ -43,6 +43,7 @@ struct MenuView: View {
                             ChezzleTabBar()
                                 .environmentObject(vm)
                                 .transition(.opacity)
+                                
                         }
                         else {
                             LoginView(vm: usrViewModel)

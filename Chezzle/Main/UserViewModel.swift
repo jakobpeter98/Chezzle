@@ -55,14 +55,21 @@ class UserViewModel: ObservableObject {
                 
             } else {
                 self.sendVerificationEmail()
-                //self.addUser(id: result?.user.uid!)
+                self.addUser(id: result?.user.uid)
             }
         }
+        
+    
+        //addUser(id: auth.currentUser?.uid)
+       
     }
     
-    func addUser(id: String) {
+    func addUser(id: String?) {
+        guard let usrId = id else {
+            return
+        }
         Task {
-            try await Database.shared.createUser(with: id)
+            try await Database.shared.createUser(with: id!)
         }
         
     }

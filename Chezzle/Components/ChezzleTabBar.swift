@@ -31,6 +31,7 @@ struct TabIcon: View {
 struct ChezzleTabBar: View {
     
     @EnvironmentObject var vm: PuzzleViewModel
+    @EnvironmentObject var vmUsr: UserViewModel
     
     @State var selection: TabBarItem = .home
     @State var lastSelection: TabBarItem = .settings
@@ -127,10 +128,12 @@ struct ChezzleTabBar: View {
                         .background(Color("ColorMainDark"))
                         
                     }
+                    
                 }
                 .frame(width: geo.size.width)
                 .animation(.easeInOut(duration: 0.3), value: selection)
             }
+        
             
     }
     
