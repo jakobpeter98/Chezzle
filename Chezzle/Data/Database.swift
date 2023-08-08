@@ -7,6 +7,7 @@
 
 import Firebase
 import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 struct Puzzle {
     let id: String
@@ -38,6 +39,7 @@ struct Puzzle {
 }
 
 class Database {
+    
     static let shared = Database()
 
     private let db: Firestore
@@ -78,8 +80,7 @@ class Database {
     }
     
     func createUser(with id: String) async throws {
-        try await userCollection.document(id)
-      
+        try userCollection.document(id).setData(from: User(id: id))
     }
 }
 

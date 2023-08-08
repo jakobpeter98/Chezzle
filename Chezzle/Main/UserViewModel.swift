@@ -27,22 +27,25 @@ class UserViewModel: ObservableObject {
         self.isLoggedIn = isLoggedIn
         self.usrId = usrId
         let df = UserDefaults()
+        
         guard let loginState = df.object(forKey: "isLoggedIn") as? Bool else {
             print("no defaults found")
             return
         }
+        
         self.rememberUser = loginState
+        
         if(loginState){
             print("Login with defaults")
-            usrMail = df.object(forKey: "email") as! String
-            usrPswd = df.object(forKey: "pswd") as! String
+            self.usrMail = df.object(forKey: "email") as! String
+            self.usrPswd = df.object(forKey: "pswd") as! String
             signIn()
             self.isLoggedIn = true
         }
         
     }
     
-    func signUp(){
+    func signUp() {
         auth.createUser(withEmail: usrMail, password: usrPswd) {result, error in
             if error != nil {
                 self.alertText = error!.localizedDescription
@@ -52,10 +55,21 @@ class UserViewModel: ObservableObject {
             } else {
                 self.sendVerificationEmail()
                 
+                
             }
         }
     }
-    
+  
+    func createUser(with id: String) async {
+        Task {
+            do {
+                try await Database.shared.createUser(with: id)
+            } catch {
+                print("User not Created")
+            }
+        }
+    }
+        
     func signIn() {
         
         self.auth.signIn(withEmail: self.usrMail, password: self.usrPswd) {result, error in
@@ -82,6 +96,7 @@ class UserViewModel: ObservableObject {
                 else {
                     self.isLoggedIn = false
                     self.sendVerificationEmail()
+                    
                 }
                 
             }
