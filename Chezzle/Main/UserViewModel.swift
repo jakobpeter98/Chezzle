@@ -47,7 +47,7 @@ class UserViewModel: ObservableObject {
     }
     
     func signUp() {
-        auth.createUser(withEmail: usrMail, password: usrPswd) {result, error in
+        auth.createUser(withEmail: usrMail, password: usrPswd) { result, error in
             if error != nil {
                 self.alertText = error!.localizedDescription
                 self.showAlert = true
@@ -55,23 +55,19 @@ class UserViewModel: ObservableObject {
                 
             } else {
                 self.sendVerificationEmail()
-                
+                //self.addUser(id: result?.user.uid!)
             }
         }
     }
-  
-    func createUser(with id: String) async {
+    
+    func addUser(id: String) {
         Task {
-            do {
-                try await Database.shared.createUser(with: id)
-            } catch {
-                print("User not Created")
-            }
+            try await Database.shared.createUser(with: id)
         }
+        
     }
         
     func signIn() {
-        
         self.auth.signIn(withEmail: self.usrMail, password: self.usrPswd) {result, error in
             if error != nil {
                 
