@@ -26,13 +26,9 @@ class PuzzleViewModel: ObservableObject {
                 
                 sourceIndex = Converter.uciToIndex(from: solutionMoves[moveIndex], colorToMove: colorToMove)
                 targetIndex = Converter.uciToIndex(from: solutionMoves[moveIndex + 1], colorToMove: colorToMove)
+                self.animateMove = true
                 moveIndex += 2
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.8){
-                    self.animateMove = true
-                }
-                
-                
-                
+//                self.animateMove = true
             }
         }
     }
@@ -54,6 +50,7 @@ class PuzzleViewModel: ObservableObject {
     // User Variables
     var userRating = 500
     var firstSelection: Bool = true
+    
     
     // Data
     var puzzleRun: PuzzleRun?
@@ -126,10 +123,15 @@ class PuzzleViewModel: ObservableObject {
     }
     
     func squareSelectionEvent(square: Square) {
+        guard !self.animateMove else {
+            square.isSelected = false
+            return
+        }
         for i in squares.indices {
             if (squares[i] === square) {
                 //make first selection
                 if (square.isSelected) {
+                    
                     if(firstSelection){
                         sourceIndex = i
                         firstSelection = false
@@ -272,8 +274,7 @@ class PuzzleRun: ObservableObject {
     
     func reset() {
         usrRating += score
-        minRating = usrRating + score
-        usrRating = minRating
+        minRating = usrRating
         maxRating = minRating + minRating / 10
         tries = 3
         score = 0
@@ -299,7 +300,7 @@ class PuzzleRun: ObservableObject {
         print("puzzle solved maxRating: \(maxRating)")
         streak += 1
         time += [0.9,1.2,1.9].randomElement()! //Add Feature Later
-        let timePenalty = Int(time) / streak //..
+//        let timePenalty = Int(time) / streak //..
         score += ((nextPuzzle?.rating ?? 500)-usrRating) / streak
         minRating = Int(Double(minRating) * multiplicator)
         maxRating = Int(Double(maxRating) * multiplicator)

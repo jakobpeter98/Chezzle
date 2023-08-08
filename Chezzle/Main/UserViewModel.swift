@@ -21,6 +21,7 @@ class UserViewModel: ObservableObject {
     
     @Published var rememberUser = false
     
+    
     private var auth = Auth.auth()
     
     init(isLoggedIn: Bool = false, usrId: Int? = nil) {
@@ -54,7 +55,6 @@ class UserViewModel: ObservableObject {
                 
             } else {
                 self.sendVerificationEmail()
-                
                 
             }
         }

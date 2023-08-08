@@ -82,28 +82,26 @@ struct Board: View {
                             x: geo.size.width / 16 + CGFloat(viewModel.sourceIndex % 8) * (geo.size.width / 8),
                             y: geo.size.width / 16 + CGFloat(viewModel.sourceIndex / 8) * (geo.size.width / 8)
                         )
+                        .offset(x: animate ? CGFloat(viewModel.targetIndex % 8 - viewModel.sourceIndex % 8) * (geo.size.width / 8) : 0,
+                                y: animate ? CGFloat(viewModel.targetIndex / 8 - viewModel.sourceIndex / 8) * (geo.size.width / 8) : 0)
                         .onAppear {
                             animatedPiece = squares[viewModel.sourceIndex].piece
                             squares[viewModel.sourceIndex].piece = ""
-                        }
-                        .offset(x: animate ? CGFloat(viewModel.targetIndex % 8 - viewModel.sourceIndex % 8) * (geo.size.width / 8) : 0,
-                                y: animate ? CGFloat(viewModel.targetIndex / 8 - viewModel.sourceIndex / 8) * (geo.size.width / 8) : 0)
-                    
-                    
-                        .onAppear {
                             withAnimation(.easeInOut(duration: 0.5)){
                                 animate = true
                             }
-                            //deselect
-                            squares[viewModel.sourceIndex].isSelected = false
-                            squares[viewModel.targetIndex].isSelected = false
+                            
                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                //deselect
+                                squares[viewModel.sourceIndex].isSelected = false
+                                squares[viewModel.targetIndex].isSelected = false
                                 squares[viewModel.targetIndex].piece = animatedPiece
                                 animatedPiece = ""
                                 viewModel.animateMove = false
                                 animate = false
                             }
                         }
+                        
                 }
                 
                 PuzzleSolvedCard(show: $viewModel.animatePuzzleSolved)
@@ -265,7 +263,7 @@ struct DisplayTop: View {
             HStack {
                 
                 HStack {
-                    AnimatedHudItem(imageName:"arrow.up.and.down", value: vm.puzzleRun?.minRating ?? -1)
+                    AnimatedHudItem(imageName:"arrow.up.and.down", value: vm.puzzleRun?.usrRating ?? -1)
                 }
                 .font(.system(size: 20).bold())
                 .frame(maxWidth: .infinity, alignment: .leading)
