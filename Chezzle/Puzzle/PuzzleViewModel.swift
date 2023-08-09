@@ -260,7 +260,7 @@ class PuzzleRun: ObservableObject {
     init(usrRating: Int = 500, onUpdate: @escaping () -> Void) {
         self.usrRating = usrRating
         self.setNextPuzzle = onUpdate
-        minRating = usrRating
+        minRating = usrRating + usrRating / 50
         maxRating = minRating + minRating / 10
         tries = 3
         multiplicator = 1.02
@@ -301,9 +301,10 @@ class PuzzleRun: ObservableObject {
         streak += 1
         time += [0.9,1.2,1.9].randomElement()! //Add Feature Later
 //        let timePenalty = Int(time) / streak //..
-        score += ((nextPuzzle?.rating ?? 500)-usrRating) / streak
-        minRating = Int(Double(minRating) * multiplicator)
-        maxRating = Int(Double(maxRating) * multiplicator)
+        score += streak + (nextPuzzle?.rating ?? 500) - usrRating
+        usrRating += score
+        minRating = usrRating
+        maxRating = Int(Double(nextPuzzle?.rating ?? 500) * multiplicator) + streak
         //setNextPuzzle()
     }
     

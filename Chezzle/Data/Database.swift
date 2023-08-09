@@ -4,7 +4,6 @@
 //
 //  Created by Jakob Peter on 19.05.23.
 //
-
 import Firebase
 import FirebaseFirestore
 import FirebaseFirestoreSwift
